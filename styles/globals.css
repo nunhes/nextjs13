@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0; /* determina a cor da fonte*/
+  --background-start-rgb: 244, 219, 220; /* determina a cor de fundo degradado inicial */
+  --background-end-rgb: 155, 155, 255; /* determina a cor de fundo degradado final */
+
+  --title-cor-rgb: 0,99,224;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+// extra non seguro
+#menu-toggle:checked + #menu {
+  display: block;
+}
+
+h2 {
+  color: rgb(var(--title-cor-rgb));
+  font-family: var(--font-nunito);
+  font-weight: 200;
+  font-size: xx-large;
+}
